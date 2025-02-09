@@ -5,6 +5,8 @@ import { PlayerListComponent } from './components/player-list/player-list.compon
 import { MatchListComponent } from './components/match-list/match-list.component';
 import { LeagueListComponent } from './components/league-list/league-list.component';
 import { NgModule } from '@angular/core';
+import { TeamDetailsComponent } from './components/team-details/team-details.component';
+import { PlayerDetailsComponent } from './components/player-details/player-details.component';
 
 export const routes: Routes = [
   { path: 'sports', component: SportListComponent },
@@ -12,5 +14,7 @@ export const routes: Routes = [
   { path: 'players', component: PlayerListComponent },
   { path: 'matches', component: MatchListComponent },
   { path: 'leagues', component: LeagueListComponent },
+  {path:'team/:id',component:TeamDetailsComponent},
+  {path:'player/:id',component:PlayerDetailsComponent},
   { path: '', redirectTo: '/matches', pathMatch: 'full' },
 ];

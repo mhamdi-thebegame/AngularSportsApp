@@ -1,1 +1,32 @@
-<p>team-list works!</p>
+<div *ngIf="isloading" class="h-100">
+    <app-loading></app-loading>
+</div>
+<div *ngIf="!isloading">
+    <div class="table-container">
+        <div class="table-header">
+            <div class="title">
+                Teams Table
+            </div>
+            <div class="subtitle">
+                Check all Teams
+            </div>
+        </div>
+        <div>
+            <div class="row mb-2" *ngFor="let item of teams">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="row p-2">
+                            <div class="col-9">
+                                {{ item.name }}
+                            </div>
+                            <div class="col-3">
+                                <a class="btn btn-primary" href="/team/{{item.id}}" >Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>

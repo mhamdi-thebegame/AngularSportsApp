@@ -1,4 +1,9 @@
-<div class="matches-container">
+<div *ngIf="isloading">
+  <app-loading></app-loading>
+
+</div>
+<div *ngIf="!isloading">
+  <div class="matches-container">
     
     <h3 class="page-title">Choose the match first</h3>
   
@@ -47,3 +52,4 @@
     </div>
   </div> 
   
+</div>

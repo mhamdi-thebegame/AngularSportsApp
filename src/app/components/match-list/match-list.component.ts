@@ -2,18 +2,19 @@ import { Component, OnInit } from '@angular/core';
 import { MatchService } from '../../services/match.service';
 import { CommonModule, DatePipe } from '@angular/common';
 import { MatchesService } from '../../services/matches.service';
+import { LoadingComponent } from "../../Shared/loading/loading.component";
 
 @Component({
     selector: 'app-match-list',
     standalone: true,
     templateUrl: './match-list.component.html',
     styleUrls: ['./match-list.component.css'],
-    imports: [CommonModule],
+    imports: [CommonModule, LoadingComponent],
     providers: [DatePipe]
 })
 export class MatchListComponent implements OnInit {
   matches: any[] = [];
-
+  isloading: boolean = true;
   
 
   constructor(
@@ -29,6 +30,8 @@ export class MatchListComponent implements OnInit {
         this.matches = res;
         // You could sort them or filter them if you want, e.g.:
         // this.matches.sort((a,b) => // custom logic);
+        console.log('Matches:', this.matches);
+        this.isloading = false;
       },
       error: (err) => {
         console.error('Error fetching matches:', err);

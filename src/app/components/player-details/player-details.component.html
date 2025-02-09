@@ -1,0 +1,67 @@
+<div *ngIf="isloading">
+    <app-loading></app-loading>
+</div>
+<div *ngIf="!isloading">
+    <div class="table-container">
+        <div class="table-header">
+            <!-- <div class="title">
+                Player Details
+            </div> -->
+            <!-- <div class="subtitle">
+                Check all Players
+            </div>  -->
+        </div>
+        <div class="row mb-2">
+            <div class="col-12 d-flex" >
+    
+                <img *ngIf="player.avatar!=null" src="{{player.avatar}}" alt="player image" class="player-image w-25 m-auto">
+                <img *ngIf="player.avatar==null" src="../../../assets/user.png" alt="player image" class="player-image w-25 m-auto">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="row mb-2">
+                        <div class="col-12 text-center">
+                            <h2>{{player.first_name}} {{player.last_name}}</h2>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-6">
+                            <label for="">height: <span>{{player.height}}</span></label>
+                        </div>
+                        <div class="col-6">
+                            <label for="">weight: <span>{{player.weight}}</span></label>
+                        </div>
+                    </div>
+                    <div class="row mb-2">
+                        <div class="col-6">
+                            <label for="">position: <span>{{player.position}}</span></label>
+                        </div>
+                        <div class="col-6">
+                            <label for="">team: <span>{{player.team}}</span></label>
+                        </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-6">
+                        <label>yellow cards: <span>{{player.yellow_cards}}</span></label>
+                    </div>
+                    <div class="col-6">
+                        <label>red cards: <span>{{player.red_cards}}</span></label>
+                    </div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-6">
+                        <label>goals: <span>{{player.goals}}</span></label>
+                    </div>
+                    <div class="col-6">
+                        <label>age: <span>{{calculateAge(player.birthdate)}}</span></label>
+                    </div>
+            </div>
+        </div>
+    
+        
+    </div>
+    
+
+</div>

@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
 })
 export class TeamService {
 
-  private baseUrl = 'http://localhost:8000/api/teams/'; // Replace with your API URL
+  private baseUrl = environment.apiUrl + '/teams/';
 
   constructor(private http: HttpClient) { }
 

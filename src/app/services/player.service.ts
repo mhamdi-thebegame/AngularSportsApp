@@ -8,7 +8,7 @@ import { environment } from '../../environments/environment';
 })
 export class PlayerService {
 
-  private baseUrl = 'http://localhost:8000/api/players/'; // Replace with your API URL
+  private baseUrl = environment.apiUrl +'/players/';
 
   constructor(private http: HttpClient) { }
 
@@ -20,6 +20,10 @@ export class PlayerService {
       params = params.set('league_id', leagueId.toString());
     }
     return this.http.get<any[]>(this.baseUrl, { params: params });
+  }
+  
+  getallplayers(): Observable<any[]> {
+    return this.http.get<any[]>(this.baseUrl);
   }
 
   getPlayer(id: number): Observable<any> {

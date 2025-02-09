@@ -1,0 +1,33 @@
+<div *ngIf="isloading">
+    <app-loading></app-loading>
+</div>
+<div *ngIf="!isloading">
+    <div class="table-container">
+        <div class="table-header mb-2">
+            <div class="title">
+                Team Details
+            </div>
+            <!-- <div class="subtitle">
+                Check all Teams
+            </div> -->
+        </div>
+        <div class="row mb-2">
+            <div class="col-12 d-flex">
+                <img *ngIf="team.logo!=null" src="{{team.logo}}" class="w-25 m-auto" alt="">
+                <img *ngIf="team.logo==null" src="assets/football-club.png" class="w-25 m-auto" alt="">
+            </div>
+        </div>
+        <div class="row mb-2">
+            <div class="col-12">
+                <div class="card text-center">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2>{{team.name}}</h2>
+                            <h4>{{team.displayname}}</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,4 +1,8 @@
-<div class="table-container">
+<div *ngIf="isloading">
+  <app-loading></app-loading>
+</div>
+<div *ngIf="!isloading">
+  <div class="table-container">
     <div class="table-header">
       <div class="title">League Table</div>
       <div class="subtitle">Check all upcoming matches and stay up-to-date</div>
@@ -23,7 +27,7 @@
         <div class="pos">{{ item.rank }}</div>
   
         
-        <div class="club">
+        <div class="club" (click)="navigateToTeam(item.team.id)">
           <div class="team-icon">
           
             <img src="assets/DefaultFootballTeam.jpg" alt="{{ item.team.name }}" />
@@ -48,4 +52,5 @@
   
     </div>
   </div>
+</div>
   

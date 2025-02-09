@@ -1,1 +1,32 @@
-<p>player-list works!</p>
+<div *ngIf="isloading">
+    <app-loading></app-loading>
+</div>
+<div *ngIf="!isloading">
+    <div class="table-container">
+        <div class="table-header">
+            <div class="title">
+                Player List
+            </div>
+            <div class="subtitle">
+                Check all Players
+            </div>
+        </div>
+        <div>
+            <div class="row mb-2" *ngFor="let item of players">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="row p-2">
+                            <div class="col-9">
+                                {{ item.first_name }} {{ item.last_name }}
+                            </div>
+                            <div class="col-3">
+                                <a class="btn btn-primary" href="/player/{{item.id}}" >Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
