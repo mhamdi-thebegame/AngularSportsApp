@@ -1,1 +1,51 @@
-<p>league-list works!</p>
+<div class="table-container">
+    <div class="table-header">
+      <div class="title">League Table</div>
+      <div class="subtitle">Check all upcoming matches and stay up-to-date</div>
+    </div>
+  
+    <div class="league-table">
+      
+      <div class="table-columns">
+        <div class="col-pos">Pos</div>
+        <div class="col-club">Club</div>
+        <div class="col-stat">MP</div>  
+        <div class="col-stat">W</div>  
+        <div class="col-stat">D</div>   
+        <div class="col-stat">L</div>   
+        <div class="col-stat">Pts</div> 
+        <div class="col-stat">GF</div>  
+      </div>
+  
+      
+      <div class="team-row" *ngFor="let item of data">
+        
+        <div class="pos">{{ item.rank }}</div>
+  
+        
+        <div class="club">
+          <div class="team-icon">
+          
+            <img src="assets/DefaultFootballTeam.jpg" alt="{{ item.team.name }}" />
+          </div>
+          <span>{{ item.team.name }}</span>
+        </div>
+        
+        <div class="stat">
+          {{ item.games_played || (item.wins + item.losses + item.ties) || 0 }}
+        </div>
+  
+        <div class="stat">{{ item.wins }}</div>
+  
+        <div class="stat">{{ item.ties }}</div>
+  
+        <div class="stat">{{ item.losses }}</div>
+  
+        <div class="stat points">{{ item.points }}</div>
+  
+        <div class="stat">{{ item.goals }}</div>
+      </div>
+  
+    </div>
+  </div>
+  

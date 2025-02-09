@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://localhost:8000/apis/v1/sports-app/'
+  apiUrl: 'http://157.230.62.64:8000/apis/v1/sports-app'
 };

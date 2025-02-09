@@ -9,10 +9,12 @@ import { TeamService } from './services/team.service';
 import { PlayerService } from './services/player.service';
 import { MatchService } from './services/match.service';
 import { LeagueService } from './services/league.service';
+import { CommonModule, DatePipe } from '@angular/common';
 
 export const appConfig: ApplicationConfig = {
   providers: [provideZoneChangeDetection({ eventCoalescing: true }), provideRouter(routes),
-    importProvidersFrom(HttpClientModule),
+    importProvidersFrom(CommonModule,HttpClientModule),
+    DatePipe ,
     SportService,
     TeamService,
     PlayerService,

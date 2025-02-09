@@ -1,9 +1,16 @@
-<h1>Sports App</h1>
+<!-- <h1>Sports App</h1>
 <nav>
   <a routerLink="/sports" routerLinkActive="active">Sports</a> |
   <a routerLink="/teams" routerLinkActive="active">Teams</a> |
   <a routerLink="/players" routerLinkActive="active">Players</a> |
   <a routerLink="/matches" routerLinkActive="active">Matches</a> |
   <a routerLink="/leagues" routerLinkActive="active">Leagues</a>
-</nav>
-<router-outlet></router-outlet>
+</nav> -->
+<div class="app-container">
+  <app-header></app-header>
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+  <app-footer></app-footer>
+</div>
+

@@ -1,1 +1,49 @@
-<p>match-list works!</p>
+<div class="matches-container">
+    
+    <h3 class="page-title">Choose the match first</h3>
+  
+    
+    <div class="matches-list">
+      
+      <div class="match-row" *ngFor="let match of matches">
+        
+        <!-- Left team -->
+        <div class="team left-team">
+          <img 
+            [src]="getTeam1Logo(match)" 
+            [alt]="getTeam1Name(match)" 
+            class="team-logo"
+          />
+          <span class="team-name">{{ getTeam1Name(match) }}</span>
+        </div>
+  
+    
+        <div class="match-info">
+          <ng-container *ngIf="match.status === 'finished'; else upcoming">
+            
+            <span class="match-result">
+              {{ match.score_team1 }} - {{ match.score_team2 }}
+            </span>
+          </ng-container>
+          <ng-template #upcoming>
+            
+            <span class="match-date">
+              {{ formatDate(match.match_date) }}
+            </span>
+          </ng-template>
+        </div>
+  
+       
+        <div class="team right-team">
+          <img 
+            [src]="getTeam2Logo(match)" 
+            [alt]="getTeam2Name(match)" 
+            class="team-logo"
+          />
+          <span class="team-name">{{ getTeam2Name(match) }}</span>
+        </div>
+  
+      </div> 
+    </div>
+  </div> 
+  

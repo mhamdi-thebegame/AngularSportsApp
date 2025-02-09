@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { LeagueService } from '../../services/league.service';
+import { TeamsLeaguesService } from '../../services/teams-leagues.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -9,19 +9,22 @@ import { CommonModule } from '@angular/common';
     styleUrls: ['./league-list.component.css'],
     imports: [CommonModule]
 })
-export class LeagueListComponent implements OnInit {
-  leagues: any[] = [];
 
-  constructor(private leagueService: LeagueService) { }
+export class LeagueListComponent implements OnInit {
+  data: any[] = [];
+
+  constructor(private teamsLeaguesService: TeamsLeaguesService) {}
 
   ngOnInit(): void {
-    this.leagueService.getLeagues().subscribe(
-      (data) => {
-        this.leagues = data;
+    // عند تحميل الكمبوننت، نجلب البيانات من الخدمة
+    this.teamsLeaguesService.getTeamsLeagues().subscribe({
+      next: (res) => {
+        console.log(res);
+        this.data = res.sort((a, b) => a.rank - b.rank);
       },
-      (error) => {
-        console.error('Error fetching leagues:', error);
+      error: (err) => {
+        console.error('Error fetching data:', err);
       }
-    );
+    });
   }
 }

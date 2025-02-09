@@ -1,0 +1,75 @@
+.matches-container {
+    /* Optional background image or color */
+    background-image: url('../../../assets/backgroundleague.png');
+    background-size: cover;
+    background-position: center;
+    min-height: 100vh; /* ensure it fills the viewport if you want */
+    padding: 16px;
+    box-sizing: border-box;
+  
+    .page-title {
+      color: white;
+      margin-bottom: 16px;
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+  
+  .matches-list {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  
+  .match-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 2fr;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px dotted #ddd; /* dotted line */
+  
+    &:last-child {
+      border-bottom: none; 
+    }
+  
+    .team {
+      display: flex;
+      align-items: center;
+      gap: 8px; /* space between logo and team name */
+  
+      .team-logo {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        object-fit: cover; /* ensures the image fills and crops nicely */
+      }
+  
+      .team-name {
+        font-weight: 500;
+        font-size: 14px;
+        color: #333;
+      }
+    }
+    .left-team{
+        display: flex;
+        flex-direction: row-reverse;
+        align-items: end;
+    }
+  
+    .match-info {
+      text-align: center; /* center the text in the middle column */
+      font-size: 14px;
+  
+      .match-result {
+        font-weight: 600; /* bold for final score */
+        color: #333;
+      }
+  
+      .match-date {
+        font-style: italic; 
+        color: #666;
+      }
+    }
+  }
+  
