@@ -1,29 +1,45 @@
-<nav class="footer-nav">
-  <a routerLink="/teams" routerLinkActive="active" class="nav-item">
-    <img src="assets/teams.svg" alt="Team Icon" width="40" height="40" />
-    <span>Team</span>
-  </a>
-
-  <a routerLink="/leagues" routerLinkActive="active" class="nav-item">
-    
-    <img src="assets/leages.svg" alt="Team Icon" width="40" height="40" />
-    <span>Leagues</span>
-  </a>
-
-  <a routerLink="/matches" routerLinkActive="active" class="nav-item main">
-    <div class="icon-container">
-        <img src="assets/Matches.svg" alt="Team Icon" width="40" height="40" />
+<div class="row footer-nav">
+  <div class="col-5">
+    <div class="row">
+      <div class="col-6 d-flex">
+        <a routerLink="/teams" routerLinkActive="active" class="nav-item m-auto">
+          <img src="assets/teams.svg" alt="Team Icon" width="40" height="40" />
+          <span>Team</span>
+        </a>
+      </div>
+      <div class="col-6 d-flex">
+        <a routerLink="/leagues" routerLinkActive="active" class="nav-item m-auto">
+        
+          <img src="assets/leages.svg" alt="Team Icon" width="40" height="40" />
+          <span>Leagues</span>
+        </a>
+      </div>
     </div>
-    <span>Matches</span>
-  </a>
+  </div>
+  <div class="col-2 d-flex p-0">
+    <a routerLink="/matches" routerLinkActive="active" class="nav-item main w-100">
+      <div class="icon-container m-auto ">
+          <img src="assets/Matches.svg" alt="Team Icon" width="40" height="40" />
+      </div>
+      <span>Matches</span>
+    </a>
+  </div>
+  <div class="col-5">
+    <div class="row d-flex">
+      <div class="col-6 m-auto d-flex">
+        <a routerLink="/players" routerLinkActive="active" class="nav-item m-auto">
+          <img src="assets/Standing.svg" alt="Team Icon" width="40" height="40" />
+          <span>Standings</span>
+        </a>
+      </div>
+      <!-- <div class="col-6 m-auto d-flex">
+        <a routerLink="/sports"  routerLinkActive="active" class="nav-item m-auto">
+          <img src="assets/Rewards.svg" alt="Team Icon" width="40" height="40" />
+          <span>Rewards</span>
+        </a>
+      </div> -->
+    </div>
+  </div>
+</div>
 
-  <a routerLink="/players" routerLinkActive="active" class="nav-item">
-    <img src="assets/Standing.svg" alt="Team Icon" width="40" height="40" />
-    <span>Standings</span>
-  </a>
 
-  <a routerLink="/sports" routerLinkActive="active" class="nav-item">
-    <img src="assets/Rewards.svg" alt="Team Icon" width="40" height="40" />
-    <span>Rewards</span>
-  </a>
-</nav>
