@@ -14,11 +14,15 @@
         
         <!-- Left team -->
         <div class="team left-team">
-          <img 
-            [src]="getTeam1Logo(match)" 
-            [alt]="getTeam1Name(match)" 
+          <a href="/team/{{match.matchteams[0].team.id}}" >
+            <img *ngIf="match.matchteams[0].team.logo==null" src="../../../assets/DefaultFootballTeam.jpg"
+          class="team-logo" alt="">
+          <img *ngIf="match.matchteams[0].team.logo!=null"
+            [src]="match.matchteams[0].team.logo" 
+            [alt]="match.matchteams[0].team.name" 
             class="team-logo"
           />
+          </a>
           <span class="team-name">{{ getTeam1Name(match) }}</span>
         </div>
   
@@ -40,11 +44,15 @@
   
        
         <div class="team right-team">
-          <img 
-            [src]="getTeam2Logo(match)" 
-            [alt]="getTeam2Name(match)" 
+          <a href="/team/{{match.matchteams[1].team.id}}">
+            <img *ngIf="match.matchteams[1].team.logo==null" src="../../../assets/DefaultFootballTeam.jpg"
+          class="team-logo" alt="">
+          <img *ngIf="match.matchteams[1].team.logo!=null"
+            [src]="match.matchteams[1].team.logo" 
+            [alt]="match.matchteams[1].team.name" 
             class="team-logo"
           />
+          </a>
           <span class="team-name">{{ getTeam2Name(match) }}</span>
         </div>
   
