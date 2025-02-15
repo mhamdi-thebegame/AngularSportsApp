@@ -1,0 +1,34 @@
+@media (max-width: 600px) {
+  /* Make the table scrollable on small screens */
+  .league-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  }
+
+  /* Enforce a minimum width so columns don't squish too tightly */
+  .table-columns,
+  .team-row {
+    min-width: 600px; /* Adjust to fit all your columns comfortably */
+  }
+
+  /* Optionally reduce font size and spacing */
+  .table-columns > div,
+  .team-row > div {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.6rem;
+  }
+
+  /* Example: shrink the team icon */
+  .team-icon img {
+    width: 20px;
+    height: 20px;
+  }
+
+  /* Example: reduce header font sizes */
+  .table-header .title {
+    font-size: 1.2rem;
+  }
+  .table-header .subtitle {
+    font-size: 0.9rem;
+  }
+}

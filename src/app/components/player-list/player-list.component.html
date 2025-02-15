@@ -5,22 +5,22 @@
     <div class="table-container">
         <div class="table-header">
             <div class="title">
-                Player List
+                Top Scores
             </div>
-            <div class="subtitle">
+            <!-- <div class="subtitle">
                 Check all Players
-            </div>
+            </div> -->
         </div>
         <div>
             <div class="row mb-2" *ngFor="let item of players">
                 <div class="col-12">
-                    <div class="card">
+                    <div class="card p-0">
                         <div class="row p-2">
-                            <div class="col-9">
+                            <div class="col-9 fw-bold">
                                 {{ item.first_name }} {{ item.last_name }}
                             </div>
                             <div class="col-3">
-                                <a class="btn btn-primary" href="/player/{{item.id}}" >Details</a>
+                                <a class="btn btn-primary" href="/player/{{item.id}}" >Info</a>
                             </div>
                         </div>
                     </div>
